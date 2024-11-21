@@ -23,6 +23,12 @@ my_items("Apple","Banana","Mango")
                    
 print("Example for arbitrary Key Word Arguement")   
 #Arbitrary Keyword Arguments,**kwargs
+def my_profile(**details):#Here Double Asterisk(**) is used to accept arbitrary keyword arguments(key:value)
+    for key,value in details.items():
+        print(key,value)
+        
+my_profile(name="Adeep",age=21,Address="Tadepalligudem")        
+
 def my_function(**kwargs):
     for key,value in kwargs.items():
         print(f"{key.capitalize()}:{value}")
@@ -50,4 +56,12 @@ def Shopping_cart(*items,**prices):
     print("Prices:")
     for item,price in prices.items():
         print(f"{item}:${price:.4f}")
-Shopping_cart("apple","banana",apple=1.2,banana=2.4)        
+Shopping_cart("apple","banana",apple=1.2,banana=2.4) 
+
+print("Defining a function with default value") 
+def my_course(course_name="Indemand course"):#Here Indemand course will assign default value to course_name
+    print(course_name)
+my_course("python")
+my_course("java")   
+my_course()#in this case it will print "Indemand course" because we have given default value to course_name
+my_course("DSA")
